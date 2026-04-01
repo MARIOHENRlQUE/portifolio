@@ -1,0 +1,129 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: background 0.3s ease, padding 0.3s ease, backdrop-filter 0.3s;
+}
+
+.scrolled {
+  background: rgba(15, 17, 23, 0.85);  /* --deep com transparência */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+}
+
+.logoAccent {
+  color: var(--light);
+}
+
+.logoDot {
+  color: var(--teal);
+  font-size: 2rem;
+  line-height: 0;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+  align-items: center;
+}
+
+.link {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(214, 221, 227, 0.6);  /* --light com transparência */
+  transition: color 0.2s;
+  position: relative;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--teal);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.link:hover {
+  color: var(--light);
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Burger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--light);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.burgerOpen:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burgerOpen:nth-child(2) { opacity: 0; }
+.burgerOpen:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .burger { display: flex; }
+
+  .links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    width: 240px;
+    flex-direction: column;
+    background: var(--ocean);
+    padding: 100px 32px 32px;
+    gap: 28px;
+    transition: right 0.35s ease;
+    border-left: 1px solid var(--border);
+  }
+
+  .open { right: 0; }
+
+  .link {
+    font-size: 1.1rem;
+    color: var(--light);
+  }
+}

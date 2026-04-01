@@ -1,0 +1,194 @@
+.section {
+  padding: 120px 0;
+}
+
+.header {
+  margin-bottom: 60px;
+}
+
+.label {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--light);
+  margin-bottom: 16px;
+}
+
+.sub {
+  font-size: 1rem;
+  color: rgba(243, 244, 244, 0.5);
+}
+
+/* Cards list */
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: rgba(29, 84, 109, 0.1);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(95, 149, 152, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(6, 30, 41, 0.5);
+}
+
+.cardTop {
+  padding: 28px 28px 0;
+  position: relative;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--status-color, var(--teal));
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--status-color, var(--teal));
+  box-shadow: 0 0 8px var(--status-color, var(--teal));
+}
+
+.number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(95, 149, 152, 0.08);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--light);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.cardSub {
+  font-size: 0.85rem;
+  color: var(--teal);
+  margin-bottom: 0;
+}
+
+.cardBody {
+  padding: 20px 28px;
+  flex: 1;
+}
+
+.desc {
+  font-size: 0.93rem;
+  color: rgba(243, 244, 244, 0.65);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.highlight {
+  font-size: 0.85rem;
+  color: rgba(243, 244, 244, 0.75);
+  display: flex;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.arrow {
+  color: var(--teal);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+.cardFooter {
+  padding: 20px 28px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech {
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(6, 30, 41, 0.6);
+  border: 1px solid var(--border);
+  color: rgba(243, 244, 244, 0.6);
+  font-weight: 500;
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+/* Add project hint */
+.addHint {
+  margin-top: 48px;
+  padding: 20px 24px;
+  background: rgba(29, 84, 109, 0.1);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.addHint p {
+  font-size: 0.85rem;
+  color: rgba(243, 244, 244, 0.4);
+}
+
+.addHint code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  background: rgba(95, 149, 152, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--teal);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 900px) {
+  .list { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,305 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+/* Grid background */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(95, 149, 152, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(95, 149, 152, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+}
+
+/* Glowing blobs */
+.blob1 {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(29, 84, 109, 0.35) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.blob2 {
+  position: absolute;
+  bottom: -5%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(95, 149, 152, 0.2) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Content */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 500;
+  margin-bottom: 20px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--teal);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--teal);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--teal); }
+  50% { opacity: 0.6; box-shadow: 0 0 20px var(--teal); }
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+
+.name {
+  color: var(--light);
+}
+
+.role {
+  color: var(--teal);
+}
+
+.sub {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: rgba(243, 244, 244, 0.45);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: fadeUp 0.6s 0.15s ease both;
+}
+
+.pitch {
+  font-size: 1.1rem;
+  color: rgba(243, 244, 244, 0.7);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 52px;
+  animation: fadeUp 0.6s 0.25s ease both;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--teal);
+  color: var(--deep);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btnPrimary:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(95, 149, 152, 0.3);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border: 1px solid var(--border);
+  color: var(--light);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  border-radius: 4px;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.btnSecondary:hover {
+  border-color: var(--teal);
+  background: rgba(95, 149, 152, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--teal);
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: rgba(243, 244, 244, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Photo */
+.photoWrap {
+  position: relative;
+  animation: fadeUp 0.6s 0.35s ease both;
+}
+
+.photoFrame {
+  position: relative;
+  width: 280px;
+  height: 340px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--ocean);
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.photoPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--teal);
+  opacity: 0.3;
+}
+
+/* Hide placeholder when photo loads */
+.photoFrame:has(img[style*="display: none"]) .photoPlaceholder,
+.photoFrame.no-photo .photoPlaceholder {
+  opacity: 1;
+}
+
+.photoFrame:not(.no-photo) img + .photoPlaceholder {
+  display: none;
+}
+
+.photoGlow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(95, 149, 152, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Scroll indicator */
+.scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scrollLine {
+  display: block;
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--teal), transparent);
+  animation: scrollDown 1.5s ease infinite;
+}
+
+@keyframes scrollDown {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .photoWrap {
+    order: -1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .photoFrame {
+    width: 180px;
+    height: 220px;
+  }
+
+  .pitch { margin-left: auto; margin-right: auto; }
+  .ctas { justify-content: center; }
+  .stats { justify-content: center; }
+  .eyebrow { justify-content: center; }
+}
