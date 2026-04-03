@@ -85,7 +85,7 @@ export default function Contact() {
 
         <div className={styles.bottom}>
           <p className={styles.copy}>
-            © {new Date().getFullYear()} Mario Henrique — Construído com Next.js & hospedado na Vercel.
+            © {new Date().getFullYear()} Mario Henrique
           </p>
           <a href="#hero" className={styles.backTop}>↑ Topo</a>
         </div>
