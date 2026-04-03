@@ -64,14 +64,13 @@ export default function Projects() {
             );
           })}
         </div>
-
-        {/* Add project hint */}
+        {/* Add project hint
         <div className={styles.addHint}>
           <p>
             💡 Para adicionar um projeto, edite o array <code>projects</code> em{" "}
             <code>data/portfolio.ts</code>
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );
